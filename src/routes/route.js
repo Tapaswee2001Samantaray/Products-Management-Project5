@@ -26,7 +26,13 @@ router.get("/users/:userId/cart", isAuthentication, getCartDetails);
 router.put("/users/:userId/cart", isAuthentication, updatecart);
 router.delete("/users/:userId/cart", isAuthentication, deleteCart);
 //======APIs for Order========
-router.post('/users/:userId/orders', isAuthentication,placeOrder);
-router.put('/users/:userId/orders', isAuthentication,updatedOrder);
+router.post('/users/:userId/orders', isAuthentication, placeOrder);
+router.put('/users/:userId/orders', isAuthentication, updatedOrder);
+
+//====== Invalid Path API =====
+router.all('/*', (req, res) => {
+    res.status(400).send({ status: false, message: "Path is Invalid" });
+});
+
 
 module.exports = router

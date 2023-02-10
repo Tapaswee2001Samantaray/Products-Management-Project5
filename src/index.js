@@ -14,9 +14,8 @@ mongoose.connect("mongodb+srv://Tapaswee2001Samantaray:jecky2001@cluster0.zinuff
     .then(() => console.log("mongoDB is connected."))
     .catch((err) => console.log(err));
 
+
 app.use("/", route);
-
-
 
 let port = process.env.PORT || 3000;
 app.listen(port, function () {

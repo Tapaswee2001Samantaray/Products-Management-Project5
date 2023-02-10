@@ -7,12 +7,9 @@ const validateName = (name) => {
 
 //====================================== Email Regex Validation =======================================//
 const validateEmail = (email) => {
-
-    let regex= /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-    
-    if (regex.test(email)) return true
+    let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    if (regex.test(email)) return true
 }
-    
 
 //==================================== Number Regex Validation ======================================//
 const validateMobileNo = (Number) => {
@@ -51,15 +48,15 @@ const isValidNum = function (value) {
 }
 
 const isIdValid = function (value) {
-    return mongoose.Types.ObjectId.isValid(value); 
+    return mongoose.Types.ObjectId.isValid(value);
 };
 
-const valid=function(value){
-    if(typeof value=="number" || typeof value==null || typeof value==undefined)     
-    return false
-    if(typeof value=="string" && value.trim().length==0)
-    return false
+const valid = function (value) {
+    if (typeof value == "number" || typeof value == null || typeof value == undefined)
+        return false
+    if (typeof value == "string" && value.trim().length == 0)
+        return false
     return true
 }
 
-module.exports = { validateName, validateEmail, validateMobileNo, validatePassword, validatePlace, validatePincode, isValidString, isValidProductSize, isValidNum,isIdValid,valid };
+module.exports = { validateName, validateEmail, validateMobileNo, validatePassword, validatePlace, validatePincode, isValidString, isValidProductSize, isValidNum, isIdValid, valid };
