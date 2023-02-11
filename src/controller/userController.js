@@ -226,7 +226,7 @@ const login = async function (req, res) {
         }
 
         const token = jwt.sign(
-            { userId: check._id.toString() }, "NKTCGROUPTHREEPROJECTFIVE", { expiresIn: "1h" }
+            { userId: check._id.toString() }, "NKTCGROUPTHREEPROJECTFIVE", { expiresIn: "2h" }
         );
         return res.status(200).send({ status: true, message: "User Login Successfull", data: { userId: check._id, token: token } });
     } catch (err) {

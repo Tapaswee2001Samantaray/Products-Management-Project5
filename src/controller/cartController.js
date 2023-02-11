@@ -348,7 +348,7 @@ const deleteCart = async (req, res) => {
             { new: true }
         ).select({ __v: 0 });
 
-        return res.status(204).send({ status: true, message: "Data Deleted", data: deletedCart });
+        return res.status(204).send();
     }
     catch (err) {
         return res.status(500).send({ status: false, err: err.message });
