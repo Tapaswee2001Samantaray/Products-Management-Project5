@@ -2,7 +2,7 @@ const { isValidObjectId } = require("mongoose");
 
 const productModel = require("../models/productModel");
 const { isValidString, isValidProductSize } = require("../validations/validator");
-const { uploadFile } = require("../middleware/aws")
+const { uploadFile } = require("../middleware/aws");
 
 
 //===============router handler for create product==============

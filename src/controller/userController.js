@@ -226,7 +226,7 @@ const login = async function (req, res) {
         }
 
         const token = jwt.sign(
-            { userId: check._id.toString() }, "NKTCGROUPTHREEPROJECTFIVE", { expiresIn: "2h" }
+            { userId: check._id.toString() }, "NKTCGROUPTHREEPROJECTFIVE", { expiresIn: "5h" }
         );
         return res.status(200).send({ status: true, message: "User Login Successfull", data: { userId: check._id, token: token } });
     } catch (err) {
@@ -250,7 +250,7 @@ const getUser = async function (req, res) {
 
         //------------------------userId matches from the token for authorization purpose-------------------------------//
         if (userId != req.token) {
-            return res.status(403).send({ status: false, message: "You are not authorize to update." });
+            return res.status(403).send({ status: false, message: "You are not authorize to get your details." });
         }
 
         const getData = await userModel.findById({ _id: userId }).select({ __v: 0 });
@@ -486,7 +486,7 @@ const updateUsers = async (req, res) => {
             return res.status(400).send({ status: false, message: "please enter valid address object..." });
         }
         return res.status(500).send({ status: false, message: err.message });
-    }
+    }  
 }
 
 
